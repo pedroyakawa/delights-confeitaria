@@ -1,0 +1,98 @@
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #9a415a;
+}
+
+header {
+  background-color: #ffa5d2;
+  padding: 20px;
+}
+
+.logo {
+  width: 150px;
+}
+
+/* Estilos de vídeo */
+section video {
+  border: 4px solid #9a415a;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+/* Conteúdo com imagens e texto */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #ffa5d2;
+  border-radius: 10px;
+}
+
+.content img {
+  width: 150px;
+  margin: 0 20px;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+}
+
+.content:nth-child(even) .text {
+  order: 1;
+}
+
+.content:nth-child(even) img {
+  order: 2;
+}
+
+/* Gerador de respostas */
+.random-generator {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #ffa5d2;
+  border-radius: 10px;
+}
+
+.random-generator h2 {
+  color: #9a415a;
+}
+
+.question {
+  display: none;
+  margin-top: 20px;
+}
+
+.question.active {
+  display: block;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #9a415a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #9a415a;
+}
+
+.result img {
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid #9a415a;
+}
+
+.result p {
+  font-size: 1.2em;
+  color: #9a415a;
+}

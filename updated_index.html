@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confeitaria Doce Sabor</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo CSS externo -->
+</head>
+<body>
+
+<header>
+  <img src="img/logo.png" alt="Logo da Confeitaria" class="logo"> <!-- Espaço para logo -->
+</header>
+
+<section>
+  <video width="320" height="240" controls>
+    <source src="video-placeholder.mp4" type="video/mp4"> <!-- Espaço para vídeo -->
+    Seu navegador não suporta a tag de vídeo.
+  </video>
+</section>
+
+<section class="content">
+  <img src="img/alfajor.png" alt="Imagem do produto"> <!-- Imagem à esquerda -->
+  <div class="text">
+    <h2>Quem somos nós?</h2>
+    <p>A Delights Confeitaria é um projeto do 2 ano B daqui da escola, nessa feira de negócios, viemoscom deliciosos alfajores no palito! O preço individual de cada alfajor é R$ 5,99.</p>
+  </div>
+</section>
+
+<section class="content">
+  <div class="text">
+    <h2>Integração de I.A.</h2>
+    <p>Estamos a inovar com uma integração de I.A. em nosso site. Que conforme suas respostas, é recomendada uma cor de alfajor pra você!</p>
+  </div>
+  <img src="img/robo.png" alt="Imagem do produto"> <!-- Imagem à direita -->
+</section>
+
+<section class="random-generator">
+  <h2>Qual Alfajor Você É?</h2>
+
+  <!-- Perguntas -->
+  <div class="question active" id="question1">
+    <p>Você é uma pessoa mais nova do que velha?</p>
+    <button onclick="answerQuestion(1, true)">Sim</button>
+    <button onclick="answerQuestion(1, false)">Não</button>
+  </div>
+  <div class="question" id="question2">
+    <p>Você é mais introvertido do que extrovertido?</p>
+    <button onclick="answerQuestion(2, true)">Sim</button>
+    <button onclick="answerQuestion(2, false)">Não</button>
+  </div>
+  <div class="question" id="question3">
+    <p>Você gosta de se atualizar com novas tecnologias?</p>
+    <button onclick="answerQuestion(3, true)">Sim</button>
+    <button onclick="answerQuestion(3, false)">Não</button>
+  </div>
+  <div class="question" id="question4">
+    <p>Você gostaria de um alfajor delicioso agora?</p>
+    <button onclick="answerQuestion(4, true)">Sim</button>
+    <button onclick="answerQuestion(4, false)">Não</button>
+  </div>
+
+  <!-- Resultado -->
+  <div class="result" id="result"></div>
+</section>
+
+<script>
+  let currentQuestion = 1;
+  const totalQuestions = 4;
+
+  function answerQuestion(questionNumber, answer) {
+    document.getElementById('question' + questionNumber).classList.remove('active');
+    
+    if (questionNumber < totalQuestions) {
+      document.getElementById('question' + (questionNumber + 1)).classList.add('active');
+      currentQuestion++;
+    } else {
+      showResult();
+    }
+  }
+
+  function showResult() {
+    const resultElement = document.getElementById('result');
+    const randomIndex = Math.floor(Math.random() * 3); // Sorteia uma resposta
+
+    const responses = [
+    '<img src="./img/vermelho.png" alt="Alfajor Vermelho"><p>Você é como nosso alfajor vermelho!</p>',
+    '<img src="./img/azul.png" alt="Alfajor Azul"><p>Você é como nosso alfajor azul!</p>',
+    '<img src="./img/verde.png" alt="Alfajor Verde"><p>Você é como nosso alfajor verde!</p>'
+];
+
+    resultElement.innerHTML = responses[randomIndex];
+  }
+</script>
+
+</body>
+</html>
